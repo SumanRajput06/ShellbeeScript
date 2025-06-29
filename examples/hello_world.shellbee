@@ -1,1 +1,7 @@
 Display("Hello, world from ShellbeeScript!")
+be name = "Suman"
+be age = 21
+
+Display("Welcome")
+Display(name)
+Display(age)
