@@ -35,3 +35,5 @@ if __name__ == "__main__":
         print("Usage: python shellbee_interpreter.py <file.shellbee>")
     else:
         run_shellbee_file(sys.argv[1])
+        elif line == "creator()":
+    print("Suman Rajput")
