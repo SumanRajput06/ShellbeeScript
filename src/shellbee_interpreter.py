@@ -15,20 +15,15 @@ def interpret_line(line):
         value = eval(value.strip())  # Use eval to convert "3" to int, etc.
         memory[var_name] = value
 
-    # Display statement: Display(name)
-    elif line.startswith("Display(") and line.endswith(")"):
-        inner = line[8:-1].strip()
-        if inner in memory:
-            print(memory[inner])
-        else:
-            print(eval(inner))  # For Display("Hello")
-
-    # Comment line
-    elif line.startswith("#"):
-        pass  # Ignore comments
-
-    else:
-        print(f"Unknown or unsupported command: {line}")
+# Version command
+elif line == "version()":
+    print("ShellbeeScript v2.0.0")
+    print("Created by Suman Rajput")
+elif line.startswith("#") or line == "":
+    pass
+else:
+    print("Shellbee Error")
+    print(f"Unknown command: {line}")
 
 def run_shellbee_file(filepath):
     with open(filepath, 'r') as file:
